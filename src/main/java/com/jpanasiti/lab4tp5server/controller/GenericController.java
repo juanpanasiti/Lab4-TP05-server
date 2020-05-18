@@ -52,11 +52,11 @@ public abstract class GenericController<E, S extends IGenericService<E>> {
 
     @PostMapping("/")
     @Transactional
-    public ResponseEntity<?> post(@RequestBody E personaForm) {
+    public ResponseEntity<?> post(@RequestBody E entityForm) {
 
         try {
 
-            return ResponseEntity.status(HttpStatus.CREATED).body(service.save(personaForm));
+            return ResponseEntity.status(HttpStatus.CREATED).body(service.save(entityForm));
 
         } catch (Exception e) {
 
